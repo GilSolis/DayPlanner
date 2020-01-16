@@ -1,13 +1,17 @@
+//variable to call moments function
 var now = moment()
 
+//set time in currentDay tag
 setInterval(function(){    
     $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, hh:mm a"))
 }, 1 * 1000)
 
+
+//loop through timeslots
 for(var i = 8; i <= 17; i++){
     CreateRow(i, "")
 }
-
+//main function to set timeslots, textareas, and save buttons
 function CreateRow(time, event){
     console.log(time)
     var thisMoment = moment(time, "H")
@@ -33,13 +37,13 @@ function CreateRow(time, event){
         console.log("IS AFTER")
         textarea.addClass('future')
     }
-    
+//appends timeBlock, textarea, save button to row
     row.append(timeBlock, textarea, saveBtn)
     $("#timeSlots").append(row)
-    
- 
-    
+     
 }
+
+//save button event
 
     
 });
