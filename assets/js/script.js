@@ -43,7 +43,17 @@ function CreateRow(time, event){
      
 }
 
-//save button event
+var saveBtn = $('.saveBtn');
+saveBtn.on('click', function(){
+    // let eventId = $(this).attr('class');
+    // console.log(eventId);
+    let textArea = $(this).parent().children('textarea').val();
+    console.log(textArea);
+    let timeSlot =  $(this).parent().children('div.col-1.hour').text()
+    console.log(timeSlot);
+    localStorage.setItem(timeSlot, textArea);
+    console.log(localStorage);
+
 
     
 });
